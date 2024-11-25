@@ -1,0 +1,38 @@
+﻿@model TradingCmpn_WEB.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Edit Product";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="ProductId" class="control-label"></label>
+        <input asp-for="ProductId" class="form-control" readonly />
+        <span asp-validation-for="ProductId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductName" class="control-label"></label>
+        <input asp-for="ProductName" class="form-control" />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price" class="control-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Зберегти зміни</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Назад до списку</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

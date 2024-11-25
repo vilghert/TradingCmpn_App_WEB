@@ -1,0 +1,22 @@
+﻿@model TradingCmpn_WEB.Models.LoginModel
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control" value="@Model?.UserName" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" value="@Model?.Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <span asp-validation-summary="All" class="text-danger"></span>
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <div class="text-danger">@ViewData["ErrorMessage"]</div>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

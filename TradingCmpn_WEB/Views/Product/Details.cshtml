@@ -1,0 +1,14 @@
+﻿@model TradingCmpn_WEB.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h3>@Model.ProductName</h3>
+    <p><strong>Ціна:</strong> @Model.Price</p>
+</div>
+
+<a href="@Url.Action("Index")" class="btn btn-secondary">Назад до списку</a>
